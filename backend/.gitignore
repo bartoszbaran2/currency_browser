@@ -5,3 +5,7 @@ db.sqlite3
 
 media
 staticfiles
+
+.coverage
+.pytest_cache
+cov_html
