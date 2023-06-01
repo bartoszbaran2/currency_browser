@@ -92,8 +92,8 @@ class CurrencyAPI(APIView):
         end_date = request.data.get("end_date")
 
         if start_date is not None and end_date is not None:
-            start_date = datetime.strptime(start_date, "%Y-%m-%d")
-            end_date = datetime.strptime(end_date, "%Y-%m-%d")
+            start_date = datetime.strptime(start_date, "%Y-%m-%d").date()
+            end_date = datetime.strptime(end_date, "%Y-%m-%d").date()
             currencies = models.CurrencyName.objects.all()
 
             dates = models.CurrencyDate.objects.filter(date__range=(start_date, end_date))
